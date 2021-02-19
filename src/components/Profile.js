@@ -1,28 +1,34 @@
 
-<div class="profile">
-  <div className="description">
-    <img
-      src="https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg"
-      alt="Аватар пользователя"
-      class="avatar"
-    />
-    <p class="tag">@pmarica</p>
-    <p class="name">Petra Marica</p>
-    <p class="location">Salvador, Brasil</p>
-  </div>
+import user  from '../user.json'
 
-  <ul class="stats">
-    <li>
-      <span class="label">Followers</span>
-      <span class="quantity">1000</span>
-    </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">2000</span>
-    </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">3000</span>
-    </li>
-  </ul>
-</div>
+function Profile(user) {
+  return
+  <div class="profile">
+    <div className="description">
+      <imghtps
+        src={user.avatar}
+        alt="Аватар пользователя"
+        class="avatar"
+      />
+      <p className="tag">{user.tag}</p>
+      <p className="name">{user.name}</p>
+      <p className="location">{user.location}</p>
+    </div>
+
+    <ul className="stats">
+      <li>
+        <span className="label">Followers</span>
+        <span className="quantity">{user.followers}</span>
+      </li>
+      <li>
+        <span className="label">Views</span>
+        <span className="quantity">user.{views}</span>
+      </li>
+      <li>
+        <span className="label">Likes</span>
+        <span className="quantity">{user.likes}</span>
+      </li>
+    </ul>
+  </div>
+}
+ export default Profile
