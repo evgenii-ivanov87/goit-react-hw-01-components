@@ -1,34 +1,32 @@
 
-import user  from '../user.json'
-
-function Profile(user) {
-  return
-  <div class="profile">
+const  Profile = ({avatar,tag,name,location,followers,views,likes}) =>(
+  
+  <div className="profile">
     <div className="description">
       <imghtps
-        src={user.avatar}
+        src={avatar}
         alt="Аватар пользователя"
         class="avatar"
       />
-      <p className="tag">{user.tag}</p>
-      <p className="name">{user.name}</p>
-      <p className="location">{user.location}</p>
+      <p className="tag">{tag}</p>
+      <p className="name">{name}</p>
+      <p className="location">{location}</p>
     </div>
 
     <ul className="stats">
       <li>
         <span className="label">Followers</span>
-        <span className="quantity">{user.followers}</span>
+        <span className="quantity">{followers}</span>
       </li>
       <li>
         <span className="label">Views</span>
-        <span className="quantity">user.{views}</span>
+        <span className="quantity">{views}</span>
       </li>
       <li>
         <span className="label">Likes</span>
-        <span className="quantity">{user.likes}</span>
+        <span className="quantity">{likes}</span>
       </li>
     </ul>
   </div>
-}
+);
  export default Profile
