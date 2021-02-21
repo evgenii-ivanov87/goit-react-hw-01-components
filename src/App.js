@@ -1,34 +1,33 @@
-import Profile from './components/Profile';
+import user from './components/Profile/user.json';
+import Profile from './components/Profile/Profile';
 
-const userProf = {
-  "name": "Jacques Gluke",
-  "tag": "jgluke",
-  "location": "Ocho Rios, Jamaica",
-  "avatar": "https://www.flaticon.com/svg/static/icons/svg/3784/3784184.svg",
-  "stats": {
-    "followers": 5603,
-    "views": 4827,
-    "likes": 1308
-  }
-};
+import statisticalData from './components/Statistics/statistical-data.json';
+import Statistics from './components/Statistics/Statistics';
 
-const ProfileList = ({ Profile }) => {
-  
-  <Profile
-    avatar={avatar}
-    tag={tag}
-    name={name}
-    location={location}
-    followers={stats.followers}
-    views={stats.views }
-    likes={stats.likes } />
-}
+import friends from './components/FriendList/friends.json';
+import FriendList from './components/FriendList/FriendList';
 
-function App() {
-  console.log(userProf)
+import transactions from './components/TransactionHistory/transactions.json';
+import TransactionHistory from './components/TransactionHistory/TransactionHistory';
+
+export default function App() {
   return (
-    <ProfileList Profile={userProf.avatar,userProf.tag,userProf.name,userProf.location,userProf.followers,userProf.views,userProf.likes }/>
+    <div>
+     
+      <Profile
+        name={user.name}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+     
+      <Statistics title="Upload stats" stats={statisticalData} />
+      <Statistics stats={statisticalData} />
+     
+      <FriendList friends={friends} />
+     
+      <TransactionHistory items={transactions} />
+    </div>
   );
 }
-
-export default App;
